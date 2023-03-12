@@ -5,19 +5,13 @@ import "core:fmt"
 import "core:strings"
 import "core:strconv"
 import "core:encoding/json"
+import Cmn "../Common"
 
 main :: proc()
 {
     solution :: part2
 
-    data, ok := os.read_entire_file("input.txt")
-    if !ok
-    {
-        panic("Could not find input.txt.\n")
-    }
-    defer delete(data, context.allocator)
-
-    lines := string(data)
+    lines := Cmn.load_day(4)
     count := 0
     for line in strings.split_lines_iterator(&lines)
     {

@@ -3,6 +3,7 @@ package AoC
 import "core:os"
 import "core:strings"
 import "core:fmt"
+import Cmn "../Common"
 
 Shape :: enum
 {
@@ -12,10 +13,7 @@ Shape :: enum
 }
 main :: proc()
 {
-    data := unwrap(os.read_entire_file("input.txt"))
-    defer delete(data, context.allocator)
-
-    lines := string(data)
+    lines := Cmn.load_day(2)
     
     score := 0
     for line in strings.split_lines_iterator(&lines)

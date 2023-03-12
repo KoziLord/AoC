@@ -4,15 +4,15 @@ import "core:os"
 import "core:strings"
 import "core:strconv"
 import "core:fmt"
+import path "core:path/filepath"
+import Cmn "../Common"
 
 
 main :: proc()
 {
-    data := unwrap(os.read_entire_file("input.txt"))
-
-    defer delete(data, context.allocator)
-
-    lines := string(data)
+    
+    
+    lines := Cmn.load_day(1)
     dwarves := make_dynamic_array_len_cap([dynamic]u32, 1, 16)
 
     for line in strings.split_lines_iterator(&lines)

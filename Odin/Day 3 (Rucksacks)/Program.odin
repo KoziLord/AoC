@@ -4,13 +4,12 @@ import "core:os"
 import "core:fmt"
 import "core:strings"
 import "core:strconv"
+import "../Common"
 
 main :: proc()
 {
-    data := unwrap(os.read_entire_file("input.txt"))
-    defer delete(data, context.allocator)
-
-    lines := string(data)
+    
+    lines := Cmn.load_day(3)
 
     buf := [128]byte{}
     
