@@ -1,4 +1,5 @@
-input.txt
+INPUTS/*
 .vs
 *.pdb
 *.exe
+zig-cache
