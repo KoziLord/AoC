@@ -3,3 +3,4 @@ INPUTS/*
 *.pdb
 *.exe
 zig-cache
+zig-out

@@ -6,9 +6,9 @@ import "core:os"
 
 load_day :: proc(day : int) -> string
 {
-    p, _ := path.abs("./../../INPUTS/Day%i%s", context.temp_allocator)
+    p, _ := path.abs("./../../INPUTS/Day%i.txt", context.temp_allocator)
     
-    str := fmt.tprintf(p, day, ".txt")
+    str := fmt.tprintf(p, day)
     if file, ok := os.read_entire_file(str); ok
     {
         return string(file)
